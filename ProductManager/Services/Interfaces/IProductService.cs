@@ -1,13 +1,12 @@
 ﻿using ProductManager.Dtos.Filter;
 using ProductManager.Dtos.Product;
-using ProductManager.Entities;
 
 namespace ProductManager.Services.Interfaces
 {
-    public interface IProduct
+    public interface IProductService
     {
-        PageResultDto<List<Product>> GetProducts(FilterDto input);
-        CreateProductDto GetProductById(int id);
+        PageResultDto<ProductDto> GetProducts(ProductFilterDto input);
+        ProductDto GetProductById(int id);
         string CreateProduct(CreateProductDto input);
         string UpdateProduct(UpdateProductDto input);
         string DeleteProduct(int id);

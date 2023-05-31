@@ -11,7 +11,7 @@ using ProductManager.Contexts;
 namespace ProductManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230524031553_DbInit")]
+    [Migration("20230531025820_DbInit")]
     partial class DbInit
     {
         /// <inheritdoc />
@@ -44,7 +44,7 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("products");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

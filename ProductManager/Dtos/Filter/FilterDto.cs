@@ -15,5 +15,9 @@ namespace ProductManager.Dtos.Filter
             get => _keyword;
             set => _keyword = value?.Trim();
         }
+        public int GetSkip()
+        {
+            return (PageIndex - 1) * PageSize;
+        }
     }
 }

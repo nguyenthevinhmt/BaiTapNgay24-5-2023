@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProductManager.Dtos.Filter;
 using ProductManager.Dtos.Product;
 using ProductManager.Services.Interfaces;
 
@@ -9,13 +8,13 @@ namespace ProductManager.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProduct _productService;
-        public ProductController(IProduct productService)
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
         {
             _productService = productService;
         }
         [HttpGet("get-all")]
-        public IActionResult GetAll([FromQuery] FilterDto input)
+        public IActionResult GetAll([FromQuery] ProductFilterDto input)
         {
             return Ok(_productService.GetProducts(input));
         }
